@@ -1,7 +1,108 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="/opengov/bootstrap/css/bootstrap.min.css">
+  <style>
+    td{
+		width:50px;
+		height: 50px;
+		vertical-align: middle!important;
+	}
+	.table{
+		width:auto!important;
+	}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <select id="selectno" onchange="mix();">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+  </select>
+  <div id="puzzle" class="container">
+  </div>
+  <script src="/opengov/jquery/jquery.min.js"></script>
+  <script>
+    var tiles = [];
+    function mix(){
+      var no = $("#selectno").val(),
+         col = 1,
+           i,
+           j;
+      switch (no){
+        case 1:
+                col = 4;
+                break;
+        case 2:
+                col = 3;
+                break;
+        case 3:
+                col = 4;
+                break;
+        case 4:
+                col = 4;
+                break;
+        case 5:
+               col = 2;
+                break;
+        case 6:
+               col = 2;
+                break;
+      }
+      tiles = [];
+       $("#puzzle").html("");
+      for (i = 0; i < no; i++){
+        //$("#puzzle").append($('<div />', {class: 'row', id:'row'+i}));
+        for(j = 0; (j < no-1) || (j==no-1 && i<no-1); j++){
+          //$("#row"+i).append($('<div />', {class: 'col-xs-' + col, id:'col'+j, text: i * no + j}));
+          tiles.push(i * no + j);
+        }
+      }
+      shuffle(tiles);
+	  var currentRow;
+	  $("#puzzle").append($('<table />', {id:'puzzletable', class:"table table-condensed table-responsive table-bordered text-center"}));
+	  $("#puzzletable").append($('<tbody/>'));
+	  $.each(tiles, function(i, item){
+		  currentRow = Math.floor(i/no);
+		  if (i%no === 0)
+			  $("#puzzletable>tbody:last").append($('<tr />', {id:'tr'+currentRow}));
+	      $("#tr"+currentRow).append($('<td />', {class: 'success', id:'td'+i%no, text: item}));	  
+	    }
+	  );
+    }
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+  </script>
 </body>
 </html>
