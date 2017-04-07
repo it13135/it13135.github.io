@@ -42,7 +42,7 @@
   <script src="/opengov/jquery/jquery.min.js"></script>
   <script>
     var tiles = [];
-	var empty = {col:5,row:5};
+	var empty = {col:0,row:0};
     function mix(){
       var no = $("#selectno").val(),
          col = 1,
@@ -98,7 +98,10 @@
 	function clickme(){
 	  var row=$(this).parent().attr("row");
 	  var col=$(this).parent().attr("col");
-	  alert(col + " - " + row);
+	  var element = $(this).detach();
+	  $("td[col="+empty.col+"][row="+empty.row+"]").append(elemend);
+	  empty.col = col;
+	  empty.row = row;
 	}
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
