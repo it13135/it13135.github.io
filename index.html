@@ -38,11 +38,15 @@
   <script src="/opengov/jquery/jquery.min.js"></script>
   <script>
     var tiles = [];
+	var empty = {col:5,row:5};
     function mix(){
       var no = $("#selectno").val(),
          col = 1,
            i,
            j;
+	  empty.col = no - 1;
+	  empty.row = no - 1;
+	  $("#puzzletable ")
       switch (no){
         case 1:
                 col = 4;
@@ -80,7 +84,7 @@
 		  currentRow = Math.floor(i/no);
 		  if (i%no === 0)
 			  $("#puzzletable>tbody:last").append($('<tr />', {id:'tr'+currentRow}));
-	      $("#tr"+currentRow).append($('<td />', {class: 'success', id:'td'+i%no, text: item}));	  
+	      $("#tr"+currentRow).append($('<td />', {class: 'success', row:currentRow, col:i%no, text: item}));	  
 	    }
 	  );
     }
