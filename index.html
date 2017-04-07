@@ -110,8 +110,8 @@
 	  var row=$(this).parent().attr("row");
 	  var col=$(this).parent().attr("col");
 	  var element = $(this).detach().appendTo($("td[col="+empty.col+"][row="+empty.row+"]"));
-	  empty.col = col;
-	  empty.row = row;
+	  empty.col = parseInt(col);
+	  empty.row = parseInt(row);
 	  fixnear();
 	}
     function shuffle(array) {
