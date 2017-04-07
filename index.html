@@ -41,6 +41,7 @@
     <option>9</option>
     <option>10</option>
   </select>
+  <button class="btn btn-primary" onclick="mix()">Ανακάτεψε</button>
   <div id="puzzle" class="container">
   </div>
   <script src="/opengov/jquery/jquery.min.js"></script>
@@ -91,7 +92,7 @@
 		  if (i%no === 0)
 			  $("#puzzletable>tbody:last").append($('<tr />', {id:'tr'+currentRow}));
 	      $("#tr"+currentRow).append($('<td />', {row:currentRow, col:i%no}));	  
-		  $("td[col="+(i%no)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:item+1}));
+		  $("td[col="+(i%no)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:item+1	}));
 	    }
 	  );
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no-1}));
