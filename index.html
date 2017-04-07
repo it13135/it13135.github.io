@@ -96,7 +96,9 @@
 	  $("td[col="+(no)+"][row="+(no-1)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
     }
 	function clickme(){
-	  alert("click");
+	  var row=$(this).parent().attr("row");
+	  var col=$(this).parent().attr("col");
+	  alert(col + " - " + row);
 	}
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
