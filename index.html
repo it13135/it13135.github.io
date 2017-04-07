@@ -91,17 +91,21 @@
 	    }
 	  );
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no-1}));
-	  $("td[col="+(no-1)+"][row="+(no-2)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
-	  $("td[col="+(no-2)+"][row="+(no-1)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
-	  $("td[col="+(no-1)+"][row="+(no)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
-	  $("td[col="+(no)+"][row="+(no-1)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
+	  fixnear();
     }
+	function fixnear(){
+	  $("td[col="+(empty.col)+"][row="+(empty.row-1)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
+	  $("td[col="+(empty.col-1)+"][row="+(empty.row)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
+	  $("td[col="+(empty.col)+"][row="+(empty.row+1)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
+	  $("td[col="+(empty.col+1)+"][row="+(empty.row)+"] button").removeClass("btn-success").addClass("btn-primary").addClass("next").bind("click", clickme);
+	}
 	function clickme(){
 	  var row=$(this).parent().attr("row");
 	  var col=$(this).parent().attr("col");
 	  var element = $(this).detach().appendTo($("td[col="+empty.col+"][row="+empty.row+"]"));
 	  empty.col = col;
 	  empty.row = row;
+	  fixnear();
 	}
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
