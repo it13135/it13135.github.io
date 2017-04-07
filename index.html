@@ -18,6 +18,9 @@
 	.table{
 		width:auto!important;
 	}
+	.next {
+	  background-color:red!important!
+	}
   </style>
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -70,9 +73,7 @@
       tiles = [];
        $("#puzzle").html("");
       for (i = 0; i < no; i++){
-        //$("#puzzle").append($('<div />', {class: 'row', id:'row'+i}));
         for(j = 0; (j < no-1) || (j==no-1 && i<no-1); j++){
-          //$("#row"+i).append($('<div />', {class: 'col-xs-' + col, id:'col'+j, text: i * no + j}));
           tiles.push(i * no + j);
         }
       }
@@ -87,6 +88,7 @@
 	      $("#tr"+currentRow).append($('<td />', {class: 'success', row:currentRow, col:i%no, text: item}));	  
 	    }
 	  );
+      $("td[col="+(no-1)+"][row="+(no-1)+"]").addClass("next");
     }
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
