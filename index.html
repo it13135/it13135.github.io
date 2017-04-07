@@ -90,10 +90,10 @@
 		  $("td[col="+(i%no)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success', text:item}));
 	    }
 	  );
-	  $("td[col="+(no-1)+"][row="+(no-2)+"]").removeClass().addClass("next");
-	  $("td[col="+(no-2)+"][row="+(no-1)+"]").removeClass().addClass("next");
-	  $("td[col="+(no-1)+"][row="+(no)+"]").removeClass().addClass("next");
-	  $("td[col="+(no)+"][row="+(no-1)+"]").removeClass().addClass("next");
+	  $("td[col="+(no-1)+"][row="+(no-2)+"] button").removeClass("btn-success").addClass("btn-primary");
+	  $("td[col="+(no-2)+"][row="+(no-1)+"] button").removeClass("btn-success").addClass("btn-primary");
+	  $("td[col="+(no-1)+"][row="+(no)+"] button").removeClass("btn-success").addClass("btn-primary");
+	  $("td[col="+(no)+"][row="+(no-1)+"] button").removeClass("btn-success").addClass("btn-primary");
     }
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
