@@ -22,6 +22,10 @@
 	  height:100%;
 	  width:100%;
 	}
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
   </style>
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -87,7 +91,7 @@ echo "test php";
       }
       shuffle(tiles);
 	  var currentRow;
-	  $("#puzzle").append($('<table />', {id:'puzzletable', class:"table table-condensed table-responsive table-bordered text-center"}));
+	  $("#puzzle").append($('<table />', {id:'puzzletable', class:"table table-condensed table-responsive table-bordered text-center center"}));
 	  $("#puzzletable").append($('<tbody/>'));
 	  $.each(tiles, function(i, item){
 		  currentRow = Math.floor(i/no);
