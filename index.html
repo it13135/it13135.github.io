@@ -47,6 +47,7 @@
   </select>
   <button class="btn btn-primary" onclick="mix()">Ανακάτεψε</button>
   <div id="puzzle" class="container">
+  <div id="info"></div>
   </div>
   <?php 
 echo "test php";
@@ -62,27 +63,7 @@ echo "test php";
            j;
 	  empty.col = no - 1;
 	  empty.row = no - 1;
-	  /*$("#puzzletable ")
-      switch (no){
-        case 1:
-                col = 4;
-                break;
-        case 2:
-                col = 3;
-                break;
-        case 3:
-                col = 4;
-                break;
-        case 4:
-                col = 4;
-                break;
-        case 5:
-               col = 2;
-                break;
-        case 6:
-               col = 2;
-                break;
-      }*/
+
       tiles = [];
        $("#puzzle").html("");
       for (i = 0; i < no; i++){
@@ -142,6 +123,7 @@ echo "test php";
     array[randomIndex] = temporaryValue;
   }
 
+  $("#info").text(array.join(", "));
   return array;
 }
 $(function() {
