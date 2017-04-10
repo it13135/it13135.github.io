@@ -106,7 +106,7 @@ echo "test php";
 	  var res = 0;
 	  $("#puzzletable td button").each(function(i, item){
 		 var txt = parseInt($(item).text());
-		 res += abs(txt-(i+1));
+		 res += Math.abs(txt-(i+1));
 	  });
 	  return res;
 	}
