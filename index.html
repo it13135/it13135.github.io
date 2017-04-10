@@ -56,8 +56,11 @@ echo "test php";
   <script>
     var tiles = [];
 	var empty = {col:1,row:1};
+	function getno(){
+	  return $("#selectno").val();
+	}
     function mix(){
-      var no = $("#selectno").val(),
+      var no = getno(),
          col = 1,
            i,
            j;
@@ -105,8 +108,14 @@ echo "test php";
 	function manhattan(){
 	  var res = 0;
 	  $("#puzzletable td button").each(function(i, item){
-		 var txt = parseInt($(item).text());
-		 res += Math.abs(txt-(i+1));
+		 var nm = parseInt($(item).text())-1;
+		 var pos = i;
+		 var no = getno();
+		 var pos_col = (pos%no)+1;
+		 var pos_row = Math.floor(pos/no)+1;
+		 var nm_col = (nm%no)+1;
+		 var nm_row = Math.floor(nm/no)+1;
+		 res += Math.abs(nm_col-pos_col)+Math.abs(nm_row-pos_row);
 	  });
 	  return res;
 	}
