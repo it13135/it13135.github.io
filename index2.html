@@ -87,9 +87,8 @@ echo "test php";
 		  $.each(row, function(j, col){
 	        $("#tr"+currentRow).append($('<td />', {row:currentRow, col:j+1}));	  
 		    $("td[col="+(j+1)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:col	}));
-		  }
-	    }
-	  );
+		  });
+	    });
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no}));
 	  fixnear();
 	  var info = "Manhattan distance= "+manhattan();
