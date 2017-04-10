@@ -67,10 +67,12 @@ echo "test php";
       tiles = [];
        $("#puzzle").html("");
       for (i = 1; i <= no; i++){
-        for(j = 1; (j <= no-1) || (j==no && i<no); j++){
-          tiles.push((i-1) * no + j);
+        for(j = 1; j <= no ; j++){
+		  if (!((i==no)&&(j==no)))
+            tiles.push((i-1) * no + j);
         }
       }
+	    
       shuffle(tiles);
 	  var currentRow;
 	  $("#puzzle").append($('<table />', {id:'puzzletable', class:"table table-condensed table-responsive table-bordered text-center center"}));
