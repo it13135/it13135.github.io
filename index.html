@@ -87,7 +87,7 @@ echo "test php";
 	  );
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no}));
 	  fixnear();
-	  var info += "Manhattan distance= "+manhattan();
+	  var info = "Manhattan distance= "+manhattan();
       $("#info2").text(info);
     }
 	function fixnear(){
