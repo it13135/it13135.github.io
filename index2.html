@@ -69,9 +69,9 @@ echo "test php";
 
       tiles = [];
        $("#puzzle").html("");
-      for (i = 1; i <= no; i++){
+      for (i = 0; i <= no-1; i++){
 	    tiles[i]=new Array();
-        for(j = 1; j <= no ; j++){
+        for(j = 0; j <= no-1 ; j++){
 		  if (!((i==no)&&(j==no)))
             tiles[i][j] = (i-1) * no + j;
         }
