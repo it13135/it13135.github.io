@@ -47,7 +47,8 @@
   </select>
   <button class="btn btn-primary" onclick="mix()">Ανακάτεψε</button>
   <div id="puzzle" class="container"></div>
-  <div id="info">TEST</div>
+  <div id="info1">TEST</div>
+  <div id="info2">TEST</div>
   <?php 
 echo "test php";
 ?>
@@ -86,6 +87,8 @@ echo "test php";
 	  );
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no}));
 	  fixnear();
+	  var info += "Manhattan distance= "+manhattan();
+      $("#info2").text(info);
     }
 	function fixnear(){
 	  $("td[col="+(empty.col)+"][row="+(empty.row-1)+"] button").removeClass("btn-success").addClass("btn-primary").bind("click", clickme);
@@ -131,11 +134,8 @@ echo "test php";
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
-  var info = "<p>"+array.join(", ")+"</p>";
-  info += "<p>Manhattan distance="+manhattan()+"</p>";
-  $("#info").text(info);
-  
+  var info = array.join(", ");
+  $("#info1").text(info);
   return array;
 }
 $(function() {
