@@ -81,10 +81,10 @@ echo "test php";
 	  $("#puzzle").append($('<table />', {id:'puzzletable', class:"table table-condensed table-responsive table-bordered text-center center"}));
 	  $("#puzzletable").append($('<tbody/>'));
 	  $.each(tiles, function(i, item){
-		  currentRow = Math.floor(i/no);
+		  currentRow = Math.floor(i/no)+1;
 		  if (i%no === 0)
 			  $("#puzzletable>tbody:last").append($('<tr />', {id:'tr'+currentRow}));
-	      $("#tr"+currentRow).append($('<td />', {row:currentRow, col:(i-1)%no}));	  
+	      $("#tr"+currentRow).append($('<td />', {row:currentRow, col:i%no}));	  
 		  $("td[col="+((i-1)%no)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:item	}));
 	    }
 	  );
