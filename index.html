@@ -85,7 +85,7 @@ echo "test php";
 		  if (i%no === 0)
 			  $("#puzzletable>tbody:last").append($('<tr />', {id:'tr'+currentRow}));
 	      $("#tr"+currentRow).append($('<td />', {row:currentRow, col:(i%no)+1}));	  
-		  $("td[col="+((i-1)%no)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:item	}));
+		  $("td[col="+((i%no)+1)+"][row="+currentRow+"]").append($('<button />', {class: 'btn btn-success next', text:item	}));
 	    }
 	  );
 	  $("#tr"+currentRow).append($('<td />', {row:currentRow, col:no}));
