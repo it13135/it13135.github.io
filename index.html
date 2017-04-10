@@ -100,10 +100,12 @@ echo "test php";
 	  $("td[col="+(empty.col+1)+"][row="+(empty.row)+"] button").addClass("btn-success").removeClass("btn-primary").unbind("click");
 	}	
 	function manhattan(){
+	  var res = 0;
 	  $("#puzzletable td button").each(function(i, item){
-	     alert(i);
-		 alert(item.text());
+		 var txt = parseInt($(item).text());
+		 res + =txt-(i+1);
 	  });
+	  return res;
 	}
 	function clickme(){
 	  unfixnear();
@@ -130,7 +132,10 @@ echo "test php";
     array[randomIndex] = temporaryValue;
   }
 
-  $("#info").text(array.join(", "));
+  var info = "<p>"+array.join(", ")+"</p>";
+  info + = "<p>Manhattan distance="+manhattan()+"</p>";
+  $("#info").text(info);
+  
   return array;
 }
 $(function() {
