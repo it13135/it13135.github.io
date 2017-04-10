@@ -68,7 +68,7 @@ echo "test php";
        $("#puzzle").html("");
       for (i = 1; i <= no; i++){
         for(j = 1; (j <= no-1) || (j==no && i<no); j++){
-          tiles.push(i * no + j);
+          tiles.push((i-1) * no + j);
         }
       }
       shuffle(tiles);
