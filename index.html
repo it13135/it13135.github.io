@@ -127,6 +127,8 @@ echo "test php";
 	  empty.col = parseInt(col);
 	  empty.row = parseInt(row);
 	  fixnear();
+	  var info = tiles.join(", ");
+      $("#info1").text(info);
 	}
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
