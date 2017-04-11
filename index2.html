@@ -132,7 +132,10 @@ echo "test php";
       $("#info1").text(info);
 	}
     function shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex;
+	  var ar = [];
+	  for (i=0;i<array.length;i++)
+	    ar =ar.concat(array[i]);
+      var currentIndex = ar.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -142,13 +145,13 @@ echo "test php";
     currentIndex -= 1;
 
     // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+    temporaryValue = ar[currentIndex];
+    ar[currentIndex] = ar[randomIndex];
+    ar[randomIndex] = temporaryValue;
   }
-  var info = array.join(", ");
+  var info = ar.join(", ");
   $("#info1").text(info);
-  return array;
+  return ar;
 }
 $(function() {
   mix();
