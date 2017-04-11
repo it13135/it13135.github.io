@@ -7,10 +7,10 @@
  */
 
 var zi = 1;
-var no = $("#selection").val();
-var EmptySquare = no*no;
 $.fn.extend({
     puzzle_dg: function(e) {
+		var no = $("#selection").val();
+        var EmptySquare = no*no;
         var t = "#" + $(this).attr("id");
         var n = e + "px";
         var r = e * no + "px";
@@ -36,6 +36,7 @@ $.fn.extend({
 
 function Move(e, t) {
     var n = false;
+	var EmptySquare = no*no;
     var r = $("#board").children("div:nth-child(" + EmptySquare + ")").css("left");
     var i = $("#board").children("div:nth-child(" + EmptySquare + ")").css("top");
     var s = $(e).css("left");
