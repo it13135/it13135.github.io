@@ -18,7 +18,7 @@
   <div class="container">
     <div class="form-group pull-center text-center col-xs-1 col-xs-offset-5">
 	  <h3>
-        <select class="form-control ">
+        <select id="selection" class="form-control ">
 	      <option value=3>3</option>
 	      <option value=4>4</option>
 	      <option value=5>5</option>
@@ -40,6 +40,7 @@
 <script src="js/puzzle-dg.min.js"></script> 
 <script type="text/javascript">$(window).on('load',function(){
     $('#game_area').puzzle_dg(60);
+	$("#selection").change(function(){alert("a");});
 });</script>
 </body>
 </html>
