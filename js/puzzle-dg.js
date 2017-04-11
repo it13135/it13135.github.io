@@ -36,6 +36,7 @@ $.fn.extend({
 
 function Move(e, t) {
     var n = false;
+    var no = $("#selection").val();
 	var EmptySquare = no*no;
     var r = $("#board").children("div:nth-child(" + EmptySquare + ")").css("left");
     var i = $("#board").children("div:nth-child(" + EmptySquare + ")").css("top");
