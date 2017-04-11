@@ -40,7 +40,12 @@
 <script src="js/puzzle-dg.min.js"></script> 
 <script type="text/javascript">$(window).on('load',function(){
     $('#game_area').puzzle_dg(60);
-	$("#selection").change(function(){alert($(this).val());});
+	$("#selection").change(function(){
+	   var selection = $(this).val();
+	   $("#game_area").css("width", selection * 60).css("height", selection * 60);
+	   $("#board div").css("background", "url('/images/grid7x7.png') no-repeat scroll 0 0 #ffffff");
+	   #game_area').puzzle_dg(60);
+	});
 });</script>
 </body>
 </html>
