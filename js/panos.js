@@ -22,7 +22,7 @@ function tile(x,y){
 	this.yreal=y;
 	this.x=x;
 	this.y=y;
-	this.move=Move();
+	this.move=Move;
 }
 
 function Move(){
