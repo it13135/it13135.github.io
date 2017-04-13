@@ -49,7 +49,6 @@ body {
 }
 
 #board div {
-	/*background: url("/images/grid4x4.png") no-repeat scroll 0 0 #ffffff;*/
 	cursor: pointer;
 	height: 60px;
 	line-height: 60px;
