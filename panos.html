@@ -13,18 +13,6 @@
 <canvas id="myCanvas" width="500" height="300">
  your browser doesn't support canvas!
 </canvas>
-<script>
-var canvas = document.getElementById("myCanvas");
-var context = canvas.getContext('2d');
-window.onload = function() {
-context.fillStyle = 'red';
-var imageObj = new Image();
-var images = [];
-imageObj.onload = function() {
-  context.drawImage(imageObj,0,0,60,60,0,0,60,60);
-};
-imageObj.src = 'images/grid4x4.png';
-}	
-</script>
+<script src="js/panos.js"></script>
 </body>
 </html>
