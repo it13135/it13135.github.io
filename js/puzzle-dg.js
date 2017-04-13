@@ -68,7 +68,7 @@ function shuffle(){
      for (i = 0; i < no; i++){
        for(j = 0; j < no ; j++){
 	     if (!((i==no-1)&&(j==no-1)))
-           tiles.push((i-1) * no + j);
+           tiles.push(i * no + j);
        }
      }
 	 shuffle(tiles);
