@@ -3,7 +3,7 @@ $(function(){
   imageObj.src = 'images/grid4x4.png';
   gm = new game(4,4, 60);
   gm.draw();
-}
+});
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext('2d');
 window.onload = function() {
