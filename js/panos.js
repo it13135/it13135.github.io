@@ -1,15 +1,18 @@
+var gm;
+$(function(){
+  imageObj.src = 'images/grid4x4.png';
+  gm = new game(4,4, 60);
+  gm.draw();
+}
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext('2d');
 window.onload = function() {
 context.fillStyle = 'red';
 var imageObj = new Image();
-var images = [];
+//var images = [];
 //imageObj.onload = function() {
 //  context.drawImage(imageObj,0,0,60,60,0,0,60,60);
 //};
-imageObj.src = 'images/grid4x4.png';
-var gm = new game(4,4, 60);
-gm.draw();
 }	
 function game(xtiles, ytiles, size){
 	this.xtiles = xtiles;
@@ -18,7 +21,7 @@ function game(xtiles, ytiles, size){
 	this.tiles = [];
 	for( var i=1; i<=xtiles; i++)  //rows
 		for( var j=1; i<=ytiles; i++)  //columns
-			tiles.push(new tile(i,j));
+			this.tiles.push(new tile(i,j));
 	this.draw = DrawGame;
 }
 function tile(x,y){
