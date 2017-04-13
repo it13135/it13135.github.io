@@ -42,7 +42,7 @@ $(function(){
 });
 
 function startGame(){
-   var selection = $(this).val();	   
+   var selection = $("#selection").val();	   
    $("#game_area").css("width", selection * 60).css("height", selection * 60);
    $('#game_area').puzzle_dg(60);
    $("#board div").removeClass().addClass("x"+selection);	
