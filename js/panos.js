@@ -12,8 +12,8 @@ function game(xtiles, ytiles, size){
 	this.ytiles = ytiles;
 	this.size = size;
 	this.tiles = [];
-	for( var i=1; i<=xtiles; i++)  //rows
-		for( var j=1; j<=ytiles; j++)  //columns
+	for( var i=0; i<=xtiles-1; i++)  //rows
+		for( var j=0; j<=ytiles-1; j++)  //columns
 			this.tiles.push(new tile(i,j));
 	this.draw = DrawGame;
 }
