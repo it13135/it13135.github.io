@@ -23,7 +23,7 @@
 	      <option value=7>7</option>
 	      <option value=8>8</option>
         </select>
-        <button class="btn btn-info">Ανακάτεψε</button>
+        <button class="btn btn-info" id="shuffle">Ανακάτεψε</button>
       </h3>
     </div>
   </div>
@@ -39,15 +39,8 @@
 $(function(){
     startGame();
 	$("#selection").change(startGame);
+	$("#suffle").click(shuffle);
 });
-
-function startGame(){
-   var selection = $("#selection").val();	   
-   $("#game_area").css("width", selection * 60).css("height", selection * 60);
-   $('#game_area').puzzle_dg(60);
-   $("#board div").removeClass().addClass("x"+selection);	
-}
-
 </script>
 </body>
 </html>

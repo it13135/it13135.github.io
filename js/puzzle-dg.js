@@ -9,7 +9,7 @@
 var zi = 1;
 $.fn.extend({
     puzzle_dg: function(e) {
-		var no = $("#selection").val();
+		var no = getSelection();
         var EmptySquare = no*no;
         var t = "#" + $(this).attr("id");
         var n = e + "px";
@@ -22,7 +22,7 @@ $.fn.extend({
             border: "1px solid gray"
         });
         for (var i = 0; i < EmptySquare; i++) {
-            $("#board").append("<div style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>")
+            $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>")
         }
         $("#board").children("div:nth-child(" + EmptySquare + ")").css({
             backgroundImage: "",
@@ -36,7 +36,7 @@ $.fn.extend({
 
 function Move(e, t) {
     var n = false;
-    var no = $("#selection").val();
+    var no = getSelection();
 	var EmptySquare = no*no;
     var r = $("#board").children("div:nth-child(" + EmptySquare + ")").css("left");
     var i = $("#board").children("div:nth-child(" + EmptySquare + ")").css("top");
@@ -56,4 +56,30 @@ function Move(e, t) {
             $("#board").children("div:nth-child(" + EmptySquare + ")").css("top", o)
         })
     }
+}
+
+function getSelection(){
+	return $("#selection").val();
+}
+
+function shuffle(){
+	 var no = getSelection();
+     tiles = [];
+     for (i = 0; i < no; i++){
+       for(j = 0; j < no ; j++){
+	     if (!((i==no-1)&&(j==no-1)))
+           tiles.push((i-1) * no + j);
+       }
+     }
+	 shuffle(tiles);
+	 $.each(tiles, function(i, item){
+		 $("tile"+item).detach.prependTo("#board");
+	 }
+}
+
+function startGame(){
+   var selection = $("#selection").val();	   
+   $("#game_area").css("width", selection * 60).css("height", selection * 60);
+   $('#game_area').puzzle_dg(60);
+   $("#board div").removeClass().addClass("x"+selection);	
 }
