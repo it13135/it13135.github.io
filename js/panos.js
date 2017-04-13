@@ -13,7 +13,7 @@ function game(xtiles, ytiles, size){
 	this.size = size;
 	this.tiles = [];
 	for( var i=1; i<=xtiles; i++)  //rows
-		for( var j=1; i<=ytiles; i++)  //columns
+		for( var j=1; j<=ytiles; j++)  //columns
 			this.tiles.push(new tile(i,j));
 	this.draw = DrawGame;
 }
