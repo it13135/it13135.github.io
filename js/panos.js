@@ -30,9 +30,10 @@ function Move(){
 }
 
 function DrawGame(){
-	$.each(this.tiles, function(i, item){
+	var thisgame = this;
+	$.each(this.tiles, function(){
 		var xfrom = (this.xreal)*60;
-		var xto = xfrom + this.size;
+		var xto = xfrom + thisgame.size;
 		var yfrom = (this.yreal)*60;
 		var yto = yfrom + this.size;
 		context.drawImage(imageObj, xfrom, yfrom, xto, yto, xfrom, yfrom, xto, yto);
