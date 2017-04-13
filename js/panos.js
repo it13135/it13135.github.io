@@ -31,10 +31,10 @@ function Move(){
 
 function DrawGame(){
 	$.each(this.tiles, function(i, item){
-		var xfrom = (j-1)*60;
-		var xto = x + this.size;
-		var yfrom = (i-1)*60;
-		var yto = y + this.size;
+		var xfrom = (this.xreal)*60;
+		var xto = xfrom + this.size;
+		var yfrom = (this.yreal)*60;
+		var yto = yfrom + this.size;
 		context.drawImage(imageObj, xfrom, yfrom, xto, yto, xfrom, yfrom, xto, yto);
 	});
 }
