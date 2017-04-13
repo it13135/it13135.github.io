@@ -102,7 +102,10 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-  var info = array.join(", ");
+  var info = "";
+  $.each(array, function(i, item){
+	  info += item + ",";
+  }
   $("#info1").text(info);
   return array;
 }
