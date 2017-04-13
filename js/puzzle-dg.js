@@ -63,6 +63,7 @@ function getSelection(){
 }
 
 function mix(){
+	startGame();
 	 var no = getSelection();
      tiles = [];
      for (i = 0; i < no; i++){
