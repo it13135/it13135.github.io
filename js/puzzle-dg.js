@@ -62,7 +62,7 @@ function getSelection(){
 	return $("#selection").val();
 }
 
-function shuffle(){
+function mix(){
 	 var no = getSelection();
      tiles = [];
      for (i = 0; i < no; i++){
@@ -82,4 +82,24 @@ function startGame(){
    $("#game_area").css("width", selection * 60).css("height", selection * 60);
    $('#game_area').puzzle_dg(60);
    $("#board div").removeClass().addClass("x"+selection);	
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  var info = array.join(", ");
+  $("#info1").text(info);
+  return array;
 }
