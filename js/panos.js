@@ -37,5 +37,14 @@ function DrawGame(){
 		var yfrom = (this.yreal)*60;
 		var yto = yfrom + thisgame.size;
 		context.drawImage(imageObj, xfrom, yfrom, xto, yto, xfrom, yfrom, xto, yto);
+		context.beginPath();
+		context.lineWidth=10;
+		context.moveTo(xfrom,yfrom);
+        context.lineTo(xfrom,yto);
+		context.lineTo(xto,yto);
+		context.lineTo(xto,yfrom);
+		context.lineTo(xfrom,yfrom);
+		context.strokeStyle="red";
+        context.stroke();
 	});
 }
