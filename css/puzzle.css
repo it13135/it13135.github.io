@@ -32,6 +32,10 @@ body {
 	width: 240px; 
 	box-shadow:6px 6px 15px 0 rgba(20,20,20,.6); 
 }
+.x3{
+	background: url("/images/grid3x3.png") no-repeat scroll 0 0 #ffffff;
+}
+
 .x4{
 	background: url("/images/grid4x4.png") no-repeat scroll 0 0 #ffffff;
 }
