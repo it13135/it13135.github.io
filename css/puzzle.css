@@ -32,6 +32,22 @@ body {
 	width: 240px; 
 	box-shadow:6px 6px 15px 0 rgba(20,20,20,.6); 
 }
+.x4{
+	background: url("/images/grid4x4.png") no-repeat scroll 0 0 #ffffff;
+}
+.x5{
+	background: url("/images/grid5x5.png") no-repeat scroll 0 0 #ffffff;
+}
+.x6{
+	background: url("/images/grid6x6.png") no-repeat scroll 0 0 #ffffff;
+}
+.x7{
+	background: url("/images/grid7x7.png") no-repeat scroll 0 0 #ffffff;
+}
+.x8{
+	background: url("/images/grid8x8.png") no-repeat scroll 0 0 #ffffff;
+}
+
 #board div {
 	/*background: url("/images/grid4x4.png") no-repeat scroll 0 0 #ffffff;*/
 	cursor: pointer;
