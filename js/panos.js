@@ -1,19 +1,12 @@
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext('2d');
+var imageObj = new Image();
 var gm;
 $(function(){
   imageObj.src = 'images/grid4x4.png';
   gm = new game(4,4, 60);
   gm.draw();
 });
-var canvas = document.getElementById("myCanvas");
-var context = canvas.getContext('2d');
-window.onload = function() {
-context.fillStyle = 'red';
-var imageObj = new Image();
-//var images = [];
-//imageObj.onload = function() {
-//  context.drawImage(imageObj,0,0,60,60,0,0,60,60);
-//};
-}	
 function game(xtiles, ytiles, size){
 	this.xtiles = xtiles;
 	this.ytiles = ytiles;
