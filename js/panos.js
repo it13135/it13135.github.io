@@ -31,7 +31,7 @@ function Move(){
 
 function DrawGame(){
 	var thisgame = this;
-	$.each(this.tiles, function(){
+	$.each(thisgame.tiles, function(){
 		var xfrom = (this.xreal)*60;
 		var xto = xfrom + thisgame.size;
 		var yfrom = (this.yreal)*60;
