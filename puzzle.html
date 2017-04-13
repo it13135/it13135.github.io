@@ -43,8 +43,8 @@
 	$("#selection").change(function(){
 	   var selection = $(this).val();
 	   $("#game_area").css("width", selection * 60).css("height", selection * 60);
-	   $("#board div").removeClass().addClass("x"+selection);
 	   $('#game_area').puzzle_dg(60);
+	   $("#board div").removeClass().addClass("x"+selection);
 	});
 });</script>
 </body>
