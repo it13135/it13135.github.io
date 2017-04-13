@@ -105,7 +105,7 @@ function shuffle(array) {
   var info = "";
   $.each(array, function(i, item){
 	  info += item + ",";
-  }
+  });
   $("#info1").text(info);
   return array;
 }
