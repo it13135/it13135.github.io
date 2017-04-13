@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en" >
 <head>
 <meta charset="utf-8" />
-<meta name="author" content="Dhiraj kumar" />
-<title>How to create a puzzle game using jQuery</title>
-<meta name="description" content="How to create a puzzle game using jQuery" />
-<meta name="keywords" content="puzzle, css3, animation, css animation, jquery, plugin, game, browser" />
-<meta name="author" content="Dhiraj kumar" />
-<meta name="copyright" content="css-jquery-design.com" />
+<title>NPuzzle Solver</title>
+<meta name="description" content="N puzzle Solver" />
+<meta name="keywords" content="N-puzzle, game" />
+<meta name="author" content="Mimilidis Manolis" />
 <link href="css/puzzle.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -39,13 +36,16 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/puzzle-dg.js"></script> 
 <script type="text/javascript">$(window).on('load',function(){
-    //$('#game_area').puzzle_dg(60);
+    startGame(selection);
 	$("#selection").change(function(){
-	   var selection = $(this).val();
+	   startGame();
+	});
+	function startGame(){
+	   var selection = $(this).val();	   
 	   $("#game_area").css("width", selection * 60).css("height", selection * 60);
 	   $('#game_area').puzzle_dg(60);
-	   $("#board div").removeClass().addClass("x"+selection);
-	});
+	   $("#board div").removeClass().addClass("x"+selection);	
+	}
 });</script>
 </body>
 </html>
