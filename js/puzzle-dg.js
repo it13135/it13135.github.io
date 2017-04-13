@@ -73,7 +73,7 @@ function mix(){
      }
 	 shuffle(tiles);
 	 $.each(tiles, function(i, item){
-		 $("tile"+item).detach.prependTo("#board");
+		 $("tile"+item).detach().prependTo("#board");
 	 });
 }
 
