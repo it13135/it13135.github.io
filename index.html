@@ -35,17 +35,19 @@
 <!-- java scripts --> 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/puzzle-dg.js"></script> 
-<script type="text/javascript">$(window).on('load',function(){
+<script type="text/javascript">
+$(function(){
     startGame();
-	$("#selection").change(function(){
-	   startGame();
-	});
-	function startGame(){
-	   var selection = $(this).val();	   
-	   $("#game_area").css("width", selection * 60).css("height", selection * 60);
-	   $('#game_area').puzzle_dg(60);
-	   $("#board div").removeClass().addClass("x"+selection);	
-	}
-});</script>
+	$("#selection").change(startGame);
+});
+
+function startGame(){
+   var selection = $(this).val();	   
+   $("#game_area").css("width", selection * 60).css("height", selection * 60);
+   $('#game_area').puzzle_dg(60);
+   $("#board div").removeClass().addClass("x"+selection);	
+}
+
+</script>
 </body>
 </html>
