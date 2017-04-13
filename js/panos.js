@@ -35,7 +35,7 @@ function DrawGame(){
 		var xfrom = (this.xreal)*60;
 		var xto = xfrom + thisgame.size;
 		var yfrom = (this.yreal)*60;
-		var yto = yfrom + this.size;
+		var yto = yfrom + thisgame.size;
 		context.drawImage(imageObj, xfrom, yfrom, xto, yto, xfrom, yfrom, xto, yto);
 	});
 }
