@@ -22,7 +22,7 @@ header a, a:visited {
 }
 body {
 	font-family: 'Cherry Swash', trebuchet ms, cursive; 
-	background:#666;
+	background:#666; 
 }
 #game_area {
 	background-color: #ffffff;
