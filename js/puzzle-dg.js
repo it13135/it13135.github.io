@@ -22,17 +22,17 @@ $.fn.extend({
             border: "1px solid gray"
         });
         for (var i = 0; i < EmptySquare; i++) {
-            $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>")
+            $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>");
         }
         $("#board").children("div:nth-child(" + EmptySquare + ")").css({
             backgroundImage: "",
             background: "#ffffff"
         });
         $("#board").children("div").click(function() {
-            Move(this, e)
-        })
+            Move(this, e);
+        });
     }
-})
+});
 
 function Move(e, t) {
     var n = false;
@@ -53,8 +53,8 @@ function Move(e, t) {
             top: i
         }, 200, function() {
             $("#board").children("div:nth-child(" + EmptySquare + ")").css("left", s);
-            $("#board").children("div:nth-child(" + EmptySquare + ")").css("top", o)
-        })
+            $("#board").children("div:nth-child(" + EmptySquare + ")").css("top", o);
+        });
     }
 }
 
@@ -74,7 +74,7 @@ function shuffle(){
 	 shuffle(tiles);
 	 $.each(tiles, function(i, item){
 		 $("tile"+item).detach.prependTo("#board");
-	 }
+	 });
 }
 
 function startGame(){
