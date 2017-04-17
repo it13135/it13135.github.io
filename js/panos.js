@@ -44,7 +44,7 @@ function DrawGame(){
 		context.lineTo(xto,yto);
 		context.lineTo(xto,yfrom);
 		context.lineTo(xfrom,yfrom);
-		context.strokeStyle="red";
+		context.strokeStyle="cyan";
         context.stroke();
 	});
 }
