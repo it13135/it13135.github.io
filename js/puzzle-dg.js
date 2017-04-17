@@ -78,7 +78,8 @@ function calcManhattan(){
 		man += Math.abs(parseInt(r1)-parseInt(r2))+Math.abs(parseInt(c1)-parseInt(c2));
 	}
 	$("#info2").text("Απόσταση Manhattan: " + man);
-
+    if (man==0)
+		alert("Συγχαρητήρια. Επιλύσατε το πρόβλημα");
 }
 function getSelection(){
 	return $("#selection").val();
