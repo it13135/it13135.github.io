@@ -59,7 +59,7 @@ function Move(e, t) {
             left: r,
             top: i
         }, 200, function() {
-            lastTile.css("left", s).attr({"currentrow": eRow, "currentcol": eCol};
+            lastTile.css("left", s).attr({"currentrow": eRow, "currentcol": eCol});
             lastTile.css("top", o);
         }).attr({"currentrow": lastRow, "currentcol": lastCol});
     }
