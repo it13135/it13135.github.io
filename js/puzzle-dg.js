@@ -91,8 +91,9 @@ function mix(){
 	 shuffle(tiles);
 	 $.each(tiles, function(i, item){
 		 $("#tile"+item).detach().prependTo("#board");
-		 $("#tile"+item).css("left",(i%no)* 60)
-		 $("#tile"+item).css("top", Math.floor(i/no)*60)
+		 $("#tile"+item).css("left",(i%no)* 60);
+		 $("#tile"+item).css("top", Math.floor(i/no)*60);
+		 $("#tile"+item).attr({"curentrow":Math.floor(i/no), "currentcol":i%no});
 	 });
 }
 
