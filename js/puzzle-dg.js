@@ -79,7 +79,7 @@ function calcManhattan(){
 	}
 	$("#info2").text("Απόσταση Manhattan: " + man);
     if (man==0)
-		alert("Συγχαρητήρια. Επιλύσατε το πρόβλημα");
+		alert("Συγχαρητήρια!!! Επιλύσατε το πρόβλημα!!!");
 }
 function getSelection(){
 	return $("#selection").val();
