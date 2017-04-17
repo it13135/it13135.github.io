@@ -102,6 +102,10 @@ function mix(){
 		 $("#tile"+item).attr({"currentrow":Math.floor(i/no), "currentcol":i%no});
 	 });
 	 calcManhattan();
+	 if (isSolvable())
+		 $("#info3").text("Επιλύσιμο");
+	 else 
+		 $("#info3").text("Μη επιλύσιμο");
 }
 function isSolvable(){
     var no = getSelection();
