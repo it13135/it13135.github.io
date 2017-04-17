@@ -63,8 +63,12 @@ function Move(e, t) {
             lastTile.css("top", o);
         }).attr({"currentrow": lastRow, "currentcol": lastCol});
     }
+	calcManhattan();
+}
+
+function calcManhattan(){
 	var man = 0;
-	for (var i = 0; i < EmptySquare; i++) {
+	for (var i = 0; i < EmptySquare-1; i++) {
 		var r1 = $("#tile"+i).attr("currentrow");
 		var r2 = $("#tile"+i).attr("row");
 		var c1 = $("#tile"+i).attr("currentcol");
@@ -72,8 +76,8 @@ function Move(e, t) {
 		man += Math.abs(parseInt(r1)-parseInt(r2))+Math.abs(parseInt(c1)-parseInt(c2));
 	}
 	$("#info2").text(man);
-}
 
+}
 function getSelection(){
 	return $("#selection").val();
 }
@@ -95,6 +99,7 @@ function mix(){
 		 $("#tile"+item).css("top", Math.floor(i/no)*60);
 		 $("#tile"+item).attr({"currentrow":Math.floor(i/no), "currentcol":i%no});
 	 });
+	 calcManhattan();
 }
 
 function startGame(){
