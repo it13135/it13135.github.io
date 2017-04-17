@@ -106,7 +106,9 @@ function mix(){
 function isSolvable(){
     var no = getSelection();
 	var EmptySquare = no*no;
+	var EmptyRow = parseInt($("#tile"+EmptySquare).attr("currentrow"));
 	var count = 0;
+	var res = false;
 	for (var i = 0; i < EmptySquare-1; i++) {
 		var currentrow = parseInt($("#tile"+i).attr("currentrow"));
 		var currentcol = parseInt($("#tile"+i).attr("currentcol"));
@@ -116,7 +118,13 @@ function isSolvable(){
 		  && parseInt($(this).attr("value"))<i);
         }).length;
 	}
-	alert(count);
+	if ((no%2==1) && (count%2==0))
+		res = true;
+	if ((no%2==0) && (EmptyRow%2==0) &&(count%2==1))
+		res = true;
+	if ((no%2==0) && (EmptyRow%2==1) &&(count%2==0))
+		res = true;
+	return res;
 }
 function startGame(){
    var selection = $("#selection").val();	   
