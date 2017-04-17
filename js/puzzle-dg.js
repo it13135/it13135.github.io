@@ -77,7 +77,7 @@ function calcManhattan(){
 		var c2 = $("#tile"+i).attr("col");
 		man += Math.abs(parseInt(r1)-parseInt(r2))+Math.abs(parseInt(c1)-parseInt(c2));
 	}
-	$("#info2").text(man);
+	$("#info2").text("Απόσταση Manhattan: " + man);
 
 }
 function getSelection(){
