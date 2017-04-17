@@ -104,8 +104,10 @@ function mix(){
 	 calcManhattan();
 	 if (isSolvable())
 		 $("#info3").text("Επιλύσιμο");
-	 else 
+	 else {
 		 $("#info3").text("Μη επιλύσιμο");
+		 alert("Το συγκεκριμένο παιχνίδι δεν είναι επιλύσιμο");
+	 }
 }
 function isSolvable(){
     var no = getSelection();
