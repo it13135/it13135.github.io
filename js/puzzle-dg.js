@@ -23,7 +23,7 @@ $.fn.extend({
         });
         for (var i = 0; i < EmptySquare; i++) {
             $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>");
-			$("#tile"+i).attr({"row": Math.floor(i / no), "col": i%no, 
+			$("#tile"+i).attr({"row": Math.floor(i / no), "col": i%no, "value":i,
 			                   "currentrow": Math.floor(i / no), "currentcol": i%no});
         }
         $("#board").children("div:nth-child(" + EmptySquare + ")").css({
@@ -61,7 +61,7 @@ function Move(e, t) {
         }, 200, function() {
             lastTile.css("left", s).attr({"currentrow": eRow, "currentcol": eCol});
             lastTile.css("top", o);
-        }).attr({"currentrow": lastRow, "currentcol": lastCol});
+        }).attr({"currentrow": lastRow, "currentcol": lastCol, "value": lastRow});
     }
 	calcManhattan();
 }
