@@ -15,10 +15,29 @@
 			height:60px;
 			float:left;
 			text-align:center;
+			background-image:url("/images/grid3x3.png");
 		  }
 		  .board{
 		    width:180px;
 			height:180px;
+		  }
+		  .row0{
+		    background-position-y:0px;
+		  }
+		  .row1{
+		    background-position-y:-60px;
+		  }
+		  .row2{
+		    background-position-y:-120px;
+		  }
+		  .col0{
+		    background-position-x:0px;
+		  }
+		  .col1{
+		    background-position-x:-60px;
+		  }
+		  .col2{
+		    background-position-x:-120px;
 		  }
 		</style>
 	</head>
@@ -32,15 +51,15 @@
 		<section>
 			<h2>This is a section</h2>
 			<div class="board x3">
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
-				<div class="tile"></div>
+				<div class="tile row0 col0"></div>
+				<div class="tile row0 col1"></div>
+				<div class="tile row0 col2"></div>
+				<div class="tile row1 col0"></div>
+				<div class="tile row1 col1"></div>
+				<div class="tile row1 col2"></div>
+				<div class="tile row2 col0"></div>
+				<div class="tile row2 col1"></div>
+				<div class="tile row2 col2"></div>
 			</div>
 		</section>
 	</body>
