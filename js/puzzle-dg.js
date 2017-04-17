@@ -61,7 +61,7 @@ function Move(e, t) {
         }, 200, function() {
             lastTile.css("left", s).attr({"currentrow": eRow, "currentcol": eCol});
             lastTile.css("top", o);
-        }).attr({"currentrow": lastRow, "currentcol": lastCol, "value": lastRow});
+        }).attr({"currentrow": lastRow, "currentcol": lastCol});
     }
 	calcManhattan();
 }
