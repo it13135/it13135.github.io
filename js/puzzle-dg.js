@@ -103,7 +103,21 @@ function mix(){
 	 });
 	 calcManhattan();
 }
-
+function isSolvable(){
+    var no = getSelection();
+	var EmptySquare = no*no;
+	var count = 0;
+	for (var i = 0; i < EmptySquare-1; i++) {
+		var currentrow = parseInt($("#tile"+i).attr("currentrow"));
+		var currentcol = parseInt($("#tile"+i).attr("currentcol"));
+		count += $("#tile"+i).siblings().filter(function() {
+		return  (parseInt($(this).attr("currentrow"))*no+
+				parseInt($(this).attr("currentcol"))>currentrow*no+currentcol 
+		  && parseInt($(this).attr("value"))<i);
+        }).length;
+	}
+	alert(count);
+}
 function startGame(){
    var selection = $("#selection").val();	   
    $("#game_area").css("width", selection * 60).css("height", selection * 60);
