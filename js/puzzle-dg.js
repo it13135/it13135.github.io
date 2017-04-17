@@ -23,7 +23,8 @@ $.fn.extend({
         });
         for (var i = 0; i < EmptySquare; i++) {
             $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>");
-			$("#tile"+i).attr({"row": Math.floor(i / no), "col": i%no});
+			$("#tile"+i).attr({"row": Math.floor(i / no), "col": i%no, 
+			                   "currentrow": Math.floor(i / no), "currentcol": i%no});
         }
         $("#board").children("div:nth-child(" + EmptySquare + ")").css({
             backgroundImage: "",
@@ -39,8 +40,13 @@ function Move(e, t) {
     var n = false;
     var no = getSelection();
 	var EmptySquare = no*no;
-    var r = $("#board").children("div:nth-child(" + EmptySquare + ")").css("left");
-    var i = $("#board").children("div:nth-child(" + EmptySquare + ")").css("top");
+	var lastTile = $("#board").children("div:nth-child(" + EmptySquare + ")");
+    var r = lastTile.css("left");
+    var i = lastTile.css("top");
+	var lastRow = lastTile.attr("currentrow");
+	var lastCol = lastTile.attr("currentcol");
+	var eRow = $(e).attr("currentrow");
+	var eCol = $(e).attr("currentcol");
     var s = $(e).css("left");
     var o = $(e).css("top");
     if (r == s && o == parseInt(i) - t + "px") n = true;
@@ -53,9 +59,9 @@ function Move(e, t) {
             left: r,
             top: i
         }, 200, function() {
-            $("#board").children("div:nth-child(" + EmptySquare + ")").css("left", s);
-            $("#board").children("div:nth-child(" + EmptySquare + ")").css("top", o);
-        });
+            lastTile.css("left", s).attr({"currentrow": eRow, "currentcol": eCol};
+            lastTile.css("top", o);
+        }).attr({"currentrow": lastRow, "currentcol": lastCol});
     }
 }
 
