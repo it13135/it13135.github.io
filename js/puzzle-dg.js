@@ -67,6 +67,7 @@ function Move(e, t) {
 }
 
 function calcManhattan(){
+    var no = getSelection();
 	var EmptySquare = no*no;
 	var man = 0;
 	for (var i = 0; i < EmptySquare-1; i++) {
