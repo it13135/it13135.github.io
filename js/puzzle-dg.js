@@ -112,7 +112,7 @@ function mix(){
 function isSolvable(){
     var no = getSelection();
 	var EmptySquare = no*no;
-	var EmptyRow = parseInt($("#tile"+EmptySquare).attr("currentrow"));
+	var EmptyRow = parseInt($("#tile"+(EmptySquare-1)).attr("currentrow"));
 	var count = 0;
 	var res = false;
 	for (var i = 0; i < EmptySquare-1; i++) {
