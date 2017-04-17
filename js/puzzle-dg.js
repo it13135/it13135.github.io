@@ -23,7 +23,7 @@ $.fn.extend({
         });
         for (var i = 0; i < EmptySquare; i++) {
             $("#board").append("<div id='tile" + i + "' style='left: " + i % no * e + "px; top: " + Math.floor(i / no) * e + "px; width: " + e + "px; height: " + e + "px; background-position: " + -(i % no) * e + "px " + -Math.floor(i / no) * e + "px ' title=" + (i + 1) + "></div>");
-			$("#tile"+i).attr({"row", Math.floor(i / no), "col", i%no});
+			$("#tile"+i).attr({"row": Math.floor(i / no), "col": i%no});
         }
         $("#board").children("div:nth-child(" + EmptySquare + ")").css({
             backgroundImage: "",
